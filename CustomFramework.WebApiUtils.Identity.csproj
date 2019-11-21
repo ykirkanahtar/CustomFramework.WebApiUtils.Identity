@@ -12,10 +12,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\EmailProvider\CS.Common.EmailProvider\CS.Common.EmailProvider.csproj" />
-    <ProjectReference Include="..\..\CustomFramework\CustomFramework.WebApiUtils.Identity.Contracts\CustomFramework.WebApiUtils.Identity.Contracts.csproj" />
-    <ProjectReference Include="..\..\CustomFramework\CustomFramework.WebApiUtils\CustomFramework.WebApiUtils.csproj" />
-    <ProjectReference Include="..\..\CustomFramework\CustomFramework.Authorization\CustomFramework.Authorization.csproj" />
-    <ProjectReference Include="..\..\CustomFramework\CustomFramework.Data.Contracts\CustomFramework.Data.Contracts.csproj" />
+    <ProjectReference Include="..\CustomFramework.WebApiUtils.Identity.Contracts\CustomFramework.WebApiUtils.Identity.Contracts.csproj" />
+    <ProjectReference Include="..\CustomFramework.WebApiUtils\CustomFramework.WebApiUtils.csproj" />
+    <ProjectReference Include="..\CustomFramework.Authorization\CustomFramework.Authorization.csproj" />
+
   </ItemGroup>
 
 </Project>
