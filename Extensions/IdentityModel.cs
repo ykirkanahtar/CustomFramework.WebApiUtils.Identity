@@ -1,5 +1,5 @@
-using CS.Common.EmailProvider;
 using CustomFramework.Authorization.Utils;
+using CustomFramework.EmailProvider;
 
 namespace CustomFramework.WebApiUtils.Identity.Extensions
 {

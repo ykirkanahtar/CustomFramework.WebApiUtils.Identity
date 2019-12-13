@@ -1,9 +1,9 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
-using CS.Common.EmailProvider;
 using CustomFramework.Authorization.Attributes;
 using CustomFramework.Authorization.Utils;
+using CustomFramework.EmailProvider;
 using CustomFramework.WebApiUtils.Identity.Business;
 using CustomFramework.WebApiUtils.Identity.Data.Repositories;
 using CustomFramework.WebApiUtils.Identity.Handlers;

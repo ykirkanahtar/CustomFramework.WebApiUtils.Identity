@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using CS.Common.EmailProvider;
 using CustomFramework.Data.Enums;
 using CustomFramework.Data.Contracts;
 using CustomFramework.Utils;
@@ -23,6 +22,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using CustomFramework.WebApiUtils.Identity.Data.Repositories;
+using CustomFramework.EmailProvider;
 
 namespace CustomFramework.WebApiUtils.Identity.Business
 {

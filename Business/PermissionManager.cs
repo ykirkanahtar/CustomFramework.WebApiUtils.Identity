@@ -99,7 +99,7 @@ namespace CustomFramework.WebApiUtils.Identity.Business
                             else
                             {
                                 if (userClaim.Value.ToLower() == permissionAttribute.ClaimValue.ToLower()) return true;
-                                else throw new UnauthorizedAccessException($"{permissionAttribute.ClaimType} - {permissionAttribute.ClaimValue}");
+                                else throw new UnauthorizedAccessException($"{permissionAttribute.ClaimType}");
                             }
                         }
                     }
@@ -121,12 +121,12 @@ namespace CustomFramework.WebApiUtils.Identity.Business
                             else
                             {
                                 if (roleClaim.Value.ToLower() == permissionAttribute.ClaimValue.ToLower()) return true;
-                                else throw new UnauthorizedAccessException($"{permissionAttribute.ClaimType} - {permissionAttribute.ClaimValue}");
+                                else throw new UnauthorizedAccessException($"{permissionAttribute.ClaimType}");
                             }
                         }
                     }
 
-                    throw new UnauthorizedAccessException($"{permissionAttribute.ClaimType} - {permissionAttribute.ClaimValue}");
+                    throw new UnauthorizedAccessException($"{permissionAttribute.ClaimType}");
                 }
             }
             catch (KeyNotFoundException ex)
