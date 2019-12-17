@@ -17,6 +17,8 @@ namespace CustomFramework.WebApiUtils.Identity.Business
         Task<IdentityResult> RegisterWithGeneratedPasswordAsync(TUser user, string password, List<string> roles, int generatePasswordLength, int createUserId, Func<Task> func = null);
         Task<IdentityResult> ChangePasswordWithEmailAsync(string email, string oldPassword, string newPassword, string confirmPassword);
         Task<IdentityResult> ChangePasswordWithUserNameAsync(string userName, string oldPassword, string newPassword, string confirmPassword);
+        Task<IdentityResult> AccessFailedAsync(int id);
+        Task<IdentityResult> ResetAccessFailedCountAsync(int id);
         Task<IdentityResult> AddClaimAsync(int id, Claim claim, IList<Claim> existingClaims);
         Task<IList<Claim>> AddClaimsAsync(int id, IEnumerable<Claim> claims, IList<Claim> existingClaims);
         Task<IdentityResult> AddToRoleAsync(int id, string role);

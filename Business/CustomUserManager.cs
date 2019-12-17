@@ -5,7 +5,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using CustomFramework.Data.Enums;
 using CustomFramework.Data.Contracts;
 using CustomFramework.Utils;
 using CustomFramework.WebApiUtils.Business;
@@ -17,7 +16,6 @@ using CustomFramework.WebApiUtils.Contracts.Resources;
 using CustomFramework.WebApiUtils.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -109,6 +107,18 @@ namespace CustomFramework.WebApiUtils.Identity.Business
 
             return await ChangePasswordAsync(user.Id, oldPassword, newPassword);
         }
+
+        public async Task<IdentityResult> AccessFailedAsync(int id)
+        {
+            var user = await GetByIdAsync(id);
+            return await _userManager.AccessFailedAsync(user);
+        }
+
+        public async Task<IdentityResult> ResetAccessFailedCountAsync(int id)
+        {
+            var user = await GetByIdAsync(id);
+            return await _userManager.ResetAccessFailedCountAsync(user);
+        }        
 
         public async Task<IdentityResult> AddClaimAsync(int id, Claim claim, IList<Claim> existingClaims)
         {
@@ -270,7 +280,7 @@ namespace CustomFramework.WebApiUtils.Identity.Business
             var user = await _userManager.FindByNameAsync(userName);
             if (user == null || user.Status != Status.Active) return null;
             return user;
-        }        
+        }
 
         public async Task<TUser> GetByEmailAsync(string email)
         {

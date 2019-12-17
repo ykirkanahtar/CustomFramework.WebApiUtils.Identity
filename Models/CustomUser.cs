@@ -17,7 +17,7 @@ namespace CustomFramework.WebApiUtils.Identity.Models
         public int? UpdateUserId { get; set; }
         public int? DeleteUserId { get; set; }
 
-        public DateTime LastTokenDate { get; set; }
+        public DateTime LastSuccessfullLogin { get; set; }
         public DateTime LastLogOutDate { get; set; }
     }
 }

@@ -64,7 +64,7 @@ namespace CustomFramework.WebApiUtils.Identity.Controllers
             var audience = _identityModel.Token.Audience;
             var expireInMinutes = _identityModel.Token.ExpireInMinutes;
 
-            var token = JwtManager.GenerateToken(claims, key, issuer, audience, out var expireDateTime,
+            var token = JwtManager.GenerateToken(claims, key, issuer, audience, out var expireDateTime, out var expireUtcDateTime,
                 expireInMinutes);
 
             return new TokenResponse
@@ -72,7 +72,8 @@ namespace CustomFramework.WebApiUtils.Identity.Controllers
                 Token = token,
                 ExpireInMinutes = expireInMinutes,
                 RequestUtcDateTime = DateTime.UtcNow,
-                ExpireUtcDateTime = expireDateTime,
+                ExpireUtcDateTime = expireUtcDateTime,
+                ExpireDateTime = expireDateTime,
                 UserId = userId
             };
         }
