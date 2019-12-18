@@ -16,7 +16,7 @@ namespace CustomFramework.WebApiUtils.Identity.Data.ModelConfigurations
 
             builder.Property(u => u.ClientApplicationCode)
                 .IsRequired()
-                .HasMaxLength(6);
+                .HasMaxLength(10);
 
             builder.Property(u => u.ClientApplicationPassword)
                 .IsRequired()
