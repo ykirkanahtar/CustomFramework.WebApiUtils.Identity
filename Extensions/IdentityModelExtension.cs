@@ -46,9 +46,9 @@ namespace CustomFramework.WebApiUtils.Identity.Extensions
             services.AddIdentity<TUser, TRole>(config =>
                 {
                     config.SignIn.RequireConfirmedEmail = requireConfirmedEmail;
-                    config.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
-                    config.Tokens.ChangeEmailTokenProvider = TokenOptions.DefaultEmailProvider;
-                    config.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider;
+                    config.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+                    config.Tokens.ChangeEmailTokenProvider = TokenOptions.DefaultProvider;
+                    config.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultProvider;
                 })
                 .AddEntityFrameworkStores<TContext>()
                 .AddErrorDescriber<MultilanguageIdentityErrorDescriber>()
